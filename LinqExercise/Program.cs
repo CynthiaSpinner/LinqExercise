@@ -56,7 +56,7 @@ namespace LinqExercise
             }
             //Done: Change the value at index 4 to your age, then print the numbers in descending order
 
-            numbers.SetValue(42, 4);
+            numbers.SetValue(41, 4);
 
             var descendingAge = numbers.OrderByDescending(num => num);
 
@@ -71,6 +71,11 @@ namespace LinqExercise
             //Done: Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S and order this in ascending order by FirstName.
 
             var filtered = employees.Where(person => person.FirstName.ToLower().StartsWith('c') || person.FirstName.ToLower()[0] == 's');
+
+            foreach (var person in filtered)
+            {
+                Console.WriteLine(person.FullName);
+            }
 
             //Done: Print all the employees' FullName and Age who are over the age 26 to the console and order this by Age first and then by FirstName in the same result.
 
